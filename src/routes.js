@@ -18,10 +18,10 @@ export default [
     path: "/",
     exact: true,
     layout: DefaultLayout,
-    component: () => <Redirect to="/blog-overview" />
+    component: () => <Redirect to="/dashboard-overview" />
   },
   {
-    path: "/blog-overview",
+    path: "/dashboard-overview",
     layout: DefaultLayout,
     component: BlogOverview
   },
