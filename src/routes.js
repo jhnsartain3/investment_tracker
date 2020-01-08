@@ -1,58 +1,32 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
-
+import {Redirect} from "react-router-dom";
 // Layout Types
-import { DefaultLayout } from "./layouts";
-
+import {DefaultLayout} from "./components/layout/default layout";
 // Route Views
-import BlogOverview from "./views/BlogOverview";
-import UserProfileLite from "./views/UserProfileLite";
-import AddNewPost from "./views/AddNewPost";
-import Errors from "./views/Errors";
-import ComponentsOverview from "./views/ComponentsOverview";
-import Tables from "./views/Tables";
-import BlogPosts from "./views/BlogPosts";
+import DashboardOverview from "./pages/DashboardOverview";
+import TransactionsTables from "./pages/TransactionsTables";
+import StockOverview from "./pages/StockOverView";
 
 export default [
-  {
-    path: "/",
-    exact: true,
-    layout: DefaultLayout,
-    component: () => <Redirect to="/dashboard-overview" />
-  },
-  {
-    path: "/dashboard-overview",
-    layout: DefaultLayout,
-    component: BlogOverview
-  },
-  {
-    path: "/user-profile-lite",
-    layout: DefaultLayout,
-    component: UserProfileLite
-  },
-  {
-    path: "/add-new-post",
-    layout: DefaultLayout,
-    component: AddNewPost
-  },
-  {
-    path: "/errors",
-    layout: DefaultLayout,
-    component: Errors
-  },
-  {
-    path: "/components-overview",
-    layout: DefaultLayout,
-    component: ComponentsOverview
-  },
-  {
-    path: "/tables",
-    layout: DefaultLayout,
-    component: Tables
-  },
-  {
-    path: "/blog-posts",
-    layout: DefaultLayout,
-    component: BlogPosts
-  }
+    {
+        path: "/",
+        exact: true,
+        layout: DefaultLayout,
+        component: () => <Redirect to="/dashboard-overview"/>
+    },
+    {
+        path: "/dashboard-overview",
+        layout: DefaultLayout,
+        component: DashboardOverview
+    },
+    {
+        path: "/stock-overview",
+        layout: DefaultLayout,
+        component: StockOverview
+    },
+    {
+        path: "/transactions-list",
+        layout: DefaultLayout,
+        component: TransactionsTables
+    }
 ];
