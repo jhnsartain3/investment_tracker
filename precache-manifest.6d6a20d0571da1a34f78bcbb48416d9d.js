@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/investment_tracker/static/css/1.97e2d3a2.chunk.css"
   },
   {
-    "revision": "71185b2cf433ce3dbad905a645a43cf7",
+    "revision": "dabf4fb614919578dc2a2c6aa3450972",
     "url": "/investment_tracker/index.html"
   }
 ];
