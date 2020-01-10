@@ -5,7 +5,7 @@ import {Col, Container, Row} from "shards-react";
 import PageTitle from "./../components/common/PageTitle";
 import SmallStats from "./../components/common/SmallStats";
 
-const DashboardOverview = ({smallStats}) => (
+const DashboardOverviewScreen = ({smallStats}) => (
     <Container fluid className="main-content-container px-4">
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
@@ -33,14 +33,14 @@ const DashboardOverview = ({smallStats}) => (
     </Container>
 );
 
-DashboardOverview.propTypes = {
+DashboardOverviewScreen.propTypes = {
     /**
      * The small stats dataset.
      */
     smallStats: PropTypes.array
 };
 
-DashboardOverview.defaultProps = {
+DashboardOverviewScreen.defaultProps = {
     smallStats: [
         {
             label: "Posts",
@@ -138,4 +138,4 @@ DashboardOverview.defaultProps = {
     ]
 };
 
-export default DashboardOverview;
+export default DashboardOverviewScreen;

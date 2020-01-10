@@ -4,7 +4,7 @@ import {Col, Container, Row} from "shards-react";
 import PageTitle from "../components/common/PageTitle";
 import TransactionTable from "../components/tiles/TransactionTable";
 
-const TransactionsTables = () => (
+const AllTransactionsScreen = () => (
     <Container fluid className="main-content-container px-4">
         {/* Page Header */}
         <Row noGutters className="page-header py-4">
@@ -20,4 +20,4 @@ const TransactionsTables = () => (
     </Container>
 );
 
-export default TransactionsTables;
+export default AllTransactionsScreen;
