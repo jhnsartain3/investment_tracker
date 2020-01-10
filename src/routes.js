@@ -3,9 +3,11 @@ import {Redirect} from "react-router-dom";
 // Layout Types
 import {DefaultLayout} from "./components/layout/default layout";
 // Route Views
-import DashboardOverview from "./pages/DashboardOverview";
-import TransactionsTables from "./pages/TransactionsTables";
-import StockOverview from "./pages/StockOverView";
+import DashboardOverviewScreen from "./pages/DashboardOverviewScreen";
+import AllTransactionsScreen from "./pages/AllTransactionsScreen";
+import StockOverviewScreen from "./pages/StockOverviewScreen";
+import LoginScreen from "./pages/LoginScreen";
+import RegistrationScreen from "./pages/RegistrationScreen";
 
 export default [
     {
@@ -17,16 +19,26 @@ export default [
     {
         path: "/dashboard-overview",
         layout: DefaultLayout,
-        component: DashboardOverview
+        component: DashboardOverviewScreen
     },
     {
         path: "/stock-overview",
         layout: DefaultLayout,
-        component: StockOverview
+        component: StockOverviewScreen
     },
     {
         path: "/transactions-list",
         layout: DefaultLayout,
-        component: TransactionsTables
+        component: AllTransactionsScreen
+    },
+    {
+        path: "/login",
+        layout: DefaultLayout,
+        component: LoginScreen
+    },
+    {
+        path: "/registration",
+        layout: DefaultLayout,
+        component: RegistrationScreen
     }
 ];
