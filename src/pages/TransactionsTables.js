@@ -13,7 +13,7 @@ const TransactionsTables = () => (
 
         {/* List */}
         <Row>
-            <Col>
+            <Col lg="8" md="12" sm="12" className="mb-4">
                 <TransactionTable/>
             </Col>
         </Row>

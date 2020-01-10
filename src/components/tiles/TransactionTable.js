@@ -68,7 +68,7 @@ TransactionTable.propTypes = {
 
 TransactionTable.defaultProps = {
     title: "All Transactions",
-    headers: ["Date", "Type", "Name", "Quantity", "Price", "Total"],
+    headers: ["Date", "Type", "Name", "X", "Price", "Total"],
     data: [
         {
             element1: "12/12",
@@ -79,12 +79,12 @@ TransactionTable.defaultProps = {
             element6: "$2539.29"
         },
         {
-            element1: "12/10",
+            element1: "12/12",
             element2: "Buy",
             element3: "AAPL",
             element4: "13",
-            element5: "$122.85",
-            element6: "$1597.05"
+            element5: "$195.33",
+            element6: "$2539.29"
         }
     ]
 };
