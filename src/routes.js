@@ -6,8 +6,11 @@ import {DefaultLayout} from "./components/layout/default layout";
 import DashboardOverviewScreen from "./pages/DashboardOverviewScreen";
 import AllTransactionsScreen from "./pages/AllTransactionsScreen";
 import StockOverviewScreen from "./pages/StockOverviewScreen";
-import LoginScreen from "./pages/LoginScreen";
 import RegistrationScreen from "./pages/RegistrationScreen";
+import withAuthentication from "./authentication/higherOrderComponents/withAuthentication";
+import Empty from "./components/layout/default layout/Empty";
+import LoginForm from "./authentication/components/LoginForm";
+import LoginScreen from "./pages/LoginScreen";
 
 export default [
     {
@@ -19,22 +22,22 @@ export default [
     {
         path: "/dashboard-overview",
         layout: DefaultLayout,
-        component: DashboardOverviewScreen
+        component: withAuthentication(DashboardOverviewScreen)
     },
     {
         path: "/stock-overview",
         layout: DefaultLayout,
-        component: StockOverviewScreen
+        component: withAuthentication(StockOverviewScreen)
     },
     {
         path: "/transactions-list",
         layout: DefaultLayout,
-        component: AllTransactionsScreen
+        component: withAuthentication(AllTransactionsScreen)
     },
     {
         path: "/login",
-        layout: DefaultLayout,
-        component: LoginScreen
+        layout: Empty,
+        component: LoginForm
     },
     {
         path: "/registration",
