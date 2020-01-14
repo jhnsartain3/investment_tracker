@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {Collapse, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, NavItem, NavLink} from "shards-react";
+import AuthenticationService from "../../../../authentication/services/AuthenticationService";
 
 export default class UserActions extends React.Component {
     constructor(props) {
@@ -20,6 +21,8 @@ export default class UserActions extends React.Component {
     }
 
     render() {
+        const AuthService = new AuthenticationService();
+
         return (
             <NavItem tag={Dropdown} caret toggle={this.toggleUserActions}>
                 <DropdownToggle caret tag={NavLink} className="text-nowrap px-3">
@@ -44,7 +47,7 @@ export default class UserActions extends React.Component {
                         <i className="material-icons">&#xE896;</i> Transactions
                     </DropdownItem>
                     <DropdownItem divider/>
-                    <DropdownItem tag={Link} to="/" className="text-danger">
+                    <DropdownItem tag={Link} to="/" className="text-danger" onClick={AuthService.logout}>
                         <i className="material-icons text-danger">&#xE879;</i> Logout
                     </DropdownItem>
                 </Collapse>

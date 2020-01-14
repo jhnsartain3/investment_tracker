@@ -14,16 +14,6 @@ export default function () {
             title: "Transactions",
             to: "/transactions-list",
             htmlBefore: '<i class="material-icons">view_module</i>'
-        },
-        {
-            title: "Login",
-            to: "/login",
-            htmlBefore: '<i class="material-icons">person</i>'
-        },
-        {
-            title: "Registration",
-            to: "/registration",
-            htmlBefore: '<i class="material-icons">person</i>'
         }
     ];
 }
