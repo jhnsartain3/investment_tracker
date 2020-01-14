@@ -6,7 +6,7 @@ import "../css/Login.css"
 class LoginForm extends Component {
     constructor() {
         super();
-        this.state = {username: "", password: ""};
+        this.state = {username: "", password: "", usernameFieldIsValid: null, passwordFieldIsValid: null};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -31,12 +31,15 @@ class LoginForm extends Component {
                         <Form>
                             <FormGroup className="username">
                                 <FormInput name="username" size="lg" placeholder="User Name" required
+                                           invalid={this.state.usernameFieldIsValid}
                                            onChange={this.handleChange}/>
+                                <FormFeedback>The username might be invalid</FormFeedback>
                             </FormGroup>
                             <FormGroup className="password">
                                 <FormInput name="password" size="lg" placeholder="Password" required
+                                           invalid={this.state.passwordFieldIsValid}
                                            onChange={this.handleChange}/>
-                                <FormFeedback>The password is invalid</FormFeedback>
+                                <FormFeedback>The password might be invalid</FormFeedback>
                             </FormGroup>
                             <Button theme="primary" onClick={this.handleFormSubmit}>
                                 Login
@@ -61,9 +64,10 @@ class LoginForm extends Component {
 
         this.AuthService.login(this.state.username, this.state.password)
             .then(res => {
-                if (res.length < 50)
+                if (res.length < 50) {
                     alert(res);
-                else {
+                    this.setState({usernameFieldIsValid: true, passwordFieldIsValid: true})
+                } else {
                     this.props.history.replace('/');
                 }
             })
