@@ -1,6 +1,9 @@
 import * as React from "react";
+import AuthenticationService from "../../authentication/services/AuthenticationService";
 
-class AccessAPI extends React.Component {
+var authenticationService = new AuthenticationService();
+
+class AccessApi extends React.Component {
     constructor(props) {
         super(props);
         let baseUrlTest = "https://localhost:44344/";
@@ -16,13 +19,19 @@ class AccessAPI extends React.Component {
     getData(urlExtension) {
         const url = this.state.url + urlExtension;
 
+        const headers = {
+
+            'Authorization': 'Bearer ' + authenticationService.getToken()
+        };
+
         return new Promise(function (resolve) {
-                fetch(url)
+                fetch(url, {headers})
                     .then(res => res.json())
                     .then((result) => {
                             return resolve(result)
                         },
                         (error) => {
+                        console.log(error)
                             return resolve(error)
                         });
             }
@@ -84,4 +93,4 @@ class AccessAPI extends React.Component {
     }
 }
 
-export default AccessAPI;
+export default AccessApi;

@@ -14,17 +14,15 @@ class TransactionTable extends React.Component {
     }
 
     generateRows() {
-        const {data} = this.props;
+        const {chartData} = this.props;
 
-        var w = data.map((x, i) => (
-            <tr>
-                {  Object.keys(x).map((r, t) => <td>{x[r]}</td>)}
-            </tr>)
+        return chartData.map((x, i) => (
+                <tr>
+                    {Object.keys(x).map((r, t) => <td>{x[r]}</td>)}
+                </tr>
+            )
         );
-
-        return w;
     }
-
 
     render() {
         const {title} = this.props;
@@ -57,19 +55,19 @@ TransactionTable.propTypes = {
      */
     title: PropTypes.string,
     /**
+     * The table's headers.
+     */
+    headers: PropTypes.string,
+    /**
      * The chart dataset.
      */
-    chartData: PropTypes.object,
-    /**
-     * The Chart.js options.
-     */
-    chartOptions: PropTypes.object
+    chartData: PropTypes.object
 };
 
 TransactionTable.defaultProps = {
     title: "All Transactions",
     headers: ["Date", "Type", "Name", "X", "Price", "Total"],
-    data: [
+    chartData: [
         {
             element1: "12/12",
             element2: "Sell",
