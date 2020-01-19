@@ -12,23 +12,23 @@ self.__precacheManifest = [
     "url": "/investment_tracker/static/js/runtime~main.cb84bc00.js"
   },
   {
-    "revision": "0ae57687626edf14cd85",
-    "url": "/investment_tracker/static/js/main.0ae57687.chunk.js"
+    "revision": "6f587fbb2c5373827739",
+    "url": "/investment_tracker/static/js/main.6f587fbb.chunk.js"
   },
   {
-    "revision": "3b08de1b97f595c0aaca",
-    "url": "/investment_tracker/static/js/1.3b08de1b.chunk.js"
+    "revision": "21a8888521276b3ece97",
+    "url": "/investment_tracker/static/js/1.21a88885.chunk.js"
   },
   {
-    "revision": "0ae57687626edf14cd85",
-    "url": "/investment_tracker/static/css/main.ab962ff2.chunk.css"
+    "revision": "6f587fbb2c5373827739",
+    "url": "/investment_tracker/static/css/main.6453c8ab.chunk.css"
   },
   {
-    "revision": "3b08de1b97f595c0aaca",
-    "url": "/investment_tracker/static/css/1.dc2d138d.chunk.css"
+    "revision": "21a8888521276b3ece97",
+    "url": "/investment_tracker/static/css/1.58a9b715.chunk.css"
   },
   {
-    "revision": "1874c34c70bea30ef67b55b7489dcd27",
+    "revision": "ae87a168b005c4be2bcc58de3df7e46e",
     "url": "/investment_tracker/index.html"
   }
 ];
