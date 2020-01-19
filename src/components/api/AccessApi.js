@@ -7,7 +7,7 @@ class AccessApi extends React.Component {
     constructor(props) {
         super(props);
 
-        let baseUrlTest = "https://localhost:44344"; //"https://sartain-studios-api.com:10101";
+        let baseUrlTest = "https://sartain-studios-api.com:10101"; //"https://localhost:44344";
         let baseUrlProd = "https://sartain-studios-api.com:10100";
 
         this.state = {
