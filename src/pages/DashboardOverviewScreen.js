@@ -43,8 +43,8 @@ DashboardOverviewScreen.propTypes = {
 DashboardOverviewScreen.defaultProps = {
     smallStats: [
         {
-            label: "Posts",
-            value: "2,390",
+            label: "Top Performer",
+            value: "$210",
             percentage: "4.7%",
             increase: true,
             chartLabels: [null, null, null, null, null, null, null],
@@ -61,8 +61,8 @@ DashboardOverviewScreen.defaultProps = {
             ]
         },
         {
-            label: "Pages",
-            value: "182",
+            label: "Favorite Stock",
+            value: "$198",
             percentage: "12.4",
             increase: true,
             chartLabels: [null, null, null, null, null, null, null],
@@ -79,11 +79,10 @@ DashboardOverviewScreen.defaultProps = {
             ]
         },
         {
-            label: "Comments",
-            value: "8,147",
+            label: "Purchases This Month",
+            value: "33",
             percentage: "3.8%",
-            increase: false,
-            decrease: true,
+            increase: true,
             chartLabels: [null, null, null, null, null, null, null],
             attrs: {md: "4", sm: "6"},
             datasets: [
@@ -98,9 +97,9 @@ DashboardOverviewScreen.defaultProps = {
             ]
         },
         {
-            label: "New Customers",
+            label: "Sells This Month",
             value: "29",
-            percentage: "2.71%",
+            percentage: ".05%",
             increase: false,
             decrease: true,
             chartLabels: [null, null, null, null, null, null, null],
@@ -112,13 +111,13 @@ DashboardOverviewScreen.defaultProps = {
                     borderWidth: 1.5,
                     backgroundColor: "rgba(255,65,105,0.1)",
                     borderColor: "rgb(255,65,105)",
-                    data: [1, 7, 1, 3, 1, 4, 8]
+                    data: [3, 3, 3, 3, 3, 3, 2.75]
                 }
             ]
         },
         {
-            label: "Subscribers",
-            value: "17,281",
+            label: "Lowest Performer",
+            value: "$154",
             percentage: "2.4%",
             increase: false,
             decrease: true,
@@ -131,7 +130,7 @@ DashboardOverviewScreen.defaultProps = {
                     borderWidth: 1.5,
                     backgroundColor: "rgb(0,123,255,0.1)",
                     borderColor: "rgb(0,123,255)",
-                    data: [3, 2, 3, 2, 4, 5, 4]
+                    data: [6, 2, 3, 2, 4, 5, 4]
                 }
             ]
         }
