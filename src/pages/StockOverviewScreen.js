@@ -4,6 +4,7 @@ import {Col, Container, Row} from "shards-react";
 
 import PageTitle from "./../components/common/PageTitle";
 import StockGraph from "../components/tiles/StockGraph";
+import SubmitNewTransaction from "../components/tiles/SubmitNewTransaction";
 
 const StockOverviewScreen = ({smallStats}) => (
     <Container fluid className="main-content-container px-4">
@@ -14,8 +15,13 @@ const StockOverviewScreen = ({smallStats}) => (
 
         <Row>
             {/* Editor */}
-            <Col lg="8" md="12" sm="12" className="mb-4">
+            <Col lg="9" md="12" sm="12" className="mb-4">
                 <StockGraph/>
+            </Col>
+
+            {/* Groups */}
+            <Col lg="3" md="6" sm="12" className="mb-4">
+                <SubmitNewTransaction ticker="test"/>
             </Col>
         </Row>
     </Container>

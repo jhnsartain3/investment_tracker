@@ -42,6 +42,7 @@ class AccessApi extends React.Component {
                 fetch(url, {
                     method: 'POST',
                     headers: {
+                        'Authorization': 'Bearer ' + authenticationService.getToken(),
                         'Accept': 'application/json',
                         'Content-Type': 'application/json',
                     },
@@ -49,12 +50,9 @@ class AccessApi extends React.Component {
                 })
                     .then(res => res.json())
                     .then((result) => {
-                            console.log(result);
-                            alert(result.error);
                             return resolve(result)
                         },
                         (error) => {
-                            alert(error);
                             return resolve(error)
                         });
             }
