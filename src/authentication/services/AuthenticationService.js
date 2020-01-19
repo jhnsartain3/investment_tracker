@@ -2,7 +2,13 @@ import decode from 'jwt-decode';
 
 export default class AuthenticationService {
     constructor() {
-        this.domain = 'https://sartain-studios-api.com:10101';
+        let baseUrlTest = "https://sartain-studios-api.com:10101"; //https://localhost:44344";
+        let baseUrlProd = "https://sartain-studios-api.com:10100";
+
+        this.domain = window.location.href.includes("localhost") ?
+            baseUrlTest :
+            baseUrlProd;
+
         this.fetch = this.fetch.bind(this);
         this.login = this.login.bind(this);
         this.getProfile = this.getProfile.bind(this)
