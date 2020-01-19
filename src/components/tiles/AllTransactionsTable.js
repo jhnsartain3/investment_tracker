@@ -82,7 +82,7 @@ class AllTransactionsTable extends React.Component {
                 </Card>
             );
         else if (isLoaded && transactions.length > 0)
-            this.displayChart();
+            return this.displayChart();
         else
             return (
                 <Card small className="mb-4">
