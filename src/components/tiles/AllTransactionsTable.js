@@ -48,32 +48,49 @@ class AllTransactionsTable extends React.Component {
         return month + "/" + day + "/" + year;
     }
 
-    render() {
-        let isLoaded = this.state.isLoaded;
+    displayChart() {
+        return (
+            <Card small className="mb-4">
+                <CardHeader className="border-bottom">
+                    <h6 className="m-0">{this.state.title}</h6>
+                </CardHeader>
+                <CardBody className="p-0 pb-3">
+                    <table className="table mb-0">
+                        <thead className="bg-light">
+                        <tr>
+                            {this.generateHeaders()}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {this.generateRows()}
+                        </tbody>
+                    </table>
+                </CardBody>
+            </Card>
+        )
+    }
 
-        if (isLoaded) {
+    render() {
+        let {isLoaded, transactions} = this.state;
+
+        if (isLoaded && transactions.length === 0)
             return (
                 <Card small className="mb-4">
-                    <CardHeader className="border-bottom">
-                        <h6 className="m-0">{this.state.title}</h6>
+                    <CardHeader>
+                        <h1 className="m-0">No Transactions Found</h1>
                     </CardHeader>
-                    <CardBody className="p-0 pb-3">
-                        <table className="table mb-0">
-                            <thead className="bg-light">
-                            <tr>
-                                {this.generateHeaders()}
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {this.generateRows()}
-                            </tbody>
-                        </table>
-                    </CardBody>
                 </Card>
             );
-        } else {
-            return (<p>Not yet loaded</p>)
-        }
+        else if (isLoaded && transactions.length > 0)
+            this.displayChart();
+        else
+            return (
+                <Card small className="mb-4">
+                    <CardHeader>
+                        <h1 className="m-0">Loading...</h1>
+                    </CardHeader>
+                </Card>
+            )
     }
 }
 
