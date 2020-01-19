@@ -1,7 +1,7 @@
 {
   "main.css": "/investment_tracker/static/css/main.6453c8ab.chunk.css",
-  "main.js": "/investment_tracker/static/js/main.ba6a0f00.chunk.js",
-  "main.js.map": "/investment_tracker/static/js/main.ba6a0f00.chunk.js.map",
+  "main.js": "/investment_tracker/static/js/main.02b710bc.chunk.js",
+  "main.js.map": "/investment_tracker/static/js/main.02b710bc.chunk.js.map",
   "static/css/1.58a9b715.chunk.css": "/investment_tracker/static/css/1.58a9b715.chunk.css",
   "static/js/1.1f7d2561.chunk.js": "/investment_tracker/static/js/1.1f7d2561.chunk.js",
   "static/js/1.1f7d2561.chunk.js.map": "/investment_tracker/static/js/1.1f7d2561.chunk.js.map",
@@ -12,6 +12,6 @@
   "static/media/shards-dashboards-logo.svg": "/investment_tracker/static/media/shards-dashboards-logo.161c7399.svg",
   "static/css/main.6453c8ab.chunk.css.map": "/investment_tracker/static/css/main.6453c8ab.chunk.css.map",
   "index.html": "/investment_tracker/index.html",
-  "precache-manifest.2a1be46cf3fd349e3c1c74cdade632ef.js": "/investment_tracker/precache-manifest.2a1be46cf3fd349e3c1c74cdade632ef.js",
+  "precache-manifest.6b0b655d8b39308ec1b2fb42fd083b28.js": "/investment_tracker/precache-manifest.6b0b655d8b39308ec1b2fb42fd083b28.js",
   "service-worker.js": "/investment_tracker/service-worker.js"
 }
