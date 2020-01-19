@@ -36,7 +36,7 @@ class LoginForm extends Component {
                                 <FormFeedback>The username might be invalid</FormFeedback>
                             </FormGroup>
                             <FormGroup className="password">
-                                <FormInput name="password" size="lg" placeholder="Password" required
+                                <FormInput name="password" type="password" size="lg" placeholder="Password" required
                                            invalid={this.state.passwordFieldIsValid}
                                            onChange={this.handleChange}/>
                                 <FormFeedback>The password might be invalid</FormFeedback>
