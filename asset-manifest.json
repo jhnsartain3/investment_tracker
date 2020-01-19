@@ -1,17 +1,17 @@
 {
   "main.css": "/investment_tracker/static/css/main.6453c8ab.chunk.css",
-  "main.js": "/investment_tracker/static/js/main.f70056cb.chunk.js",
-  "main.js.map": "/investment_tracker/static/js/main.f70056cb.chunk.js.map",
+  "main.js": "/investment_tracker/static/js/main.788ac6ab.chunk.js",
+  "main.js.map": "/investment_tracker/static/js/main.788ac6ab.chunk.js.map",
   "static/css/1.58a9b715.chunk.css": "/investment_tracker/static/css/1.58a9b715.chunk.css",
   "static/js/1.21a88885.chunk.js": "/investment_tracker/static/js/1.21a88885.chunk.js",
   "static/js/1.21a88885.chunk.js.map": "/investment_tracker/static/js/1.21a88885.chunk.js.map",
   "runtime~main.js": "/investment_tracker/static/js/runtime~main.cb84bc00.js",
   "runtime~main.js.map": "/investment_tracker/static/js/runtime~main.cb84bc00.js.map",
-  "static/css/main.6453c8ab.chunk.css.map": "/investment_tracker/static/css/main.6453c8ab.chunk.css.map",
+  "static/css/1.58a9b715.chunk.css.map": "/investment_tracker/static/css/1.58a9b715.chunk.css.map",
   "static/media/0.jpg": "/investment_tracker/static/media/0.73476783.jpg",
   "static/media/shards-dashboards-logo.svg": "/investment_tracker/static/media/shards-dashboards-logo.161c7399.svg",
-  "static/css/1.58a9b715.chunk.css.map": "/investment_tracker/static/css/1.58a9b715.chunk.css.map",
+  "static/css/main.6453c8ab.chunk.css.map": "/investment_tracker/static/css/main.6453c8ab.chunk.css.map",
   "index.html": "/investment_tracker/index.html",
-  "precache-manifest.782887514b85014e10e35e5b847c8f0c.js": "/investment_tracker/precache-manifest.782887514b85014e10e35e5b847c8f0c.js",
+  "precache-manifest.f4300205d8f79776537944145aaae53e.js": "/investment_tracker/precache-manifest.f4300205d8f79776537944145aaae53e.js",
   "service-worker.js": "/investment_tracker/service-worker.js"
 }
