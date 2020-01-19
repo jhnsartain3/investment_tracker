@@ -6,8 +6,9 @@ var authenticationService = new AuthenticationService();
 class AccessApi extends React.Component {
     constructor(props) {
         super(props);
-        let baseUrlTest = "https://localhost:44344/";
-        let baseUrlProd = "https://sartain-studios-api.com:10100/";
+
+        let baseUrlTest = "https://localhost:44344"; //"https://sartain-studios-api.com:10101";
+        let baseUrlProd = "https://sartain-studios-api.com:10100";
 
         this.state = {
             url: window.location.href.includes("localhost") ?
@@ -19,10 +20,7 @@ class AccessApi extends React.Component {
     getData(urlExtension) {
         const url = this.state.url + urlExtension;
 
-        const headers = {
-
-            'Authorization': 'Bearer ' + authenticationService.getToken()
-        };
+        const headers = {'Authorization': 'Bearer ' + authenticationService.getToken()};
 
         return new Promise(function (resolve) {
                 fetch(url, {headers})
@@ -31,7 +29,6 @@ class AccessApi extends React.Component {
                             return resolve(result)
                         },
                         (error) => {
-                        console.log(error)
                             return resolve(error)
                         });
             }
