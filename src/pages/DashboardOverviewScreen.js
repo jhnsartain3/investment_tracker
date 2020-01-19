@@ -4,6 +4,8 @@ import {Col, Container, Row} from "shards-react";
 
 import PageTitle from "./../components/common/PageTitle";
 import SmallStats from "./../components/common/SmallStats";
+import StockGraph from "../components/tiles/StockGraph";
+import TopStocks from "../components/tiles/TopStocks";
 
 const DashboardOverviewScreen = ({smallStats}) => (
     <Container fluid className="main-content-container px-4">
@@ -30,6 +32,18 @@ const DashboardOverviewScreen = ({smallStats}) => (
                 </Col>
             ))}
         </Row>
+
+        <Row>
+            {/* Editor */}
+            <Col lg="8" md="12" sm="12" className="mb-4">
+                <StockGraph/>
+            </Col>
+            {/* Users by Device */}
+            <Col lg="4" md="6" sm="12" className="mb-4">
+                <TopStocks/>
+            </Col>
+        </Row>
+
     </Container>
 );
 
