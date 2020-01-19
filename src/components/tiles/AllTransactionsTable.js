@@ -1,33 +1,17 @@
 import React from "react";
 import {Card, CardBody, CardHeader} from "shards-react";
-import AccessApiWrapper from "../api/AccessApiWrapper";
-
-var accessApiWrapper = new AccessApiWrapper();
 
 class AllTransactionsTable extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            transactions: [],
-            headers: ["Date", "Type", "Ticker", "X", "Price", "Total"],
-            title: "All Transactions",
-            isLoaded: false
-        }
-    }
-
-    componentWillMount() {
-        accessApiWrapper.getData("/Transaction").then((result) => {
-            this.setState({transactions: result, isLoaded: true})
-        });
     }
 
     generateHeaders() {
-        return this.state.headers.map((header) => (<th scope="col" className="border-0">{header}</th>));
+        return this.props.headers.map((header) => (<th scope="col" className="border-0">{header}</th>));
     }
 
     generateRows() {
-        return this.state.transactions.map((x, i) => (
+        return this.props.transactions.map((x, i) => (
                 <tr>
                     <td>{this.formatDate(x.date)}</td>
                     <td>{x.type}</td>
@@ -52,7 +36,7 @@ class AllTransactionsTable extends React.Component {
         return (
             <Card small className="mb-4">
                 <CardHeader className="border-bottom">
-                    <h6 className="m-0">{this.state.title}</h6>
+                    <h6 className="m-0">{this.props.title}</h6>
                 </CardHeader>
                 <CardBody className="p-0 pb-3">
                     <table className="table mb-0">
@@ -71,9 +55,9 @@ class AllTransactionsTable extends React.Component {
     }
 
     render() {
-        let {isLoaded, transactions} = this.state;
+        let {transactions} = this.props;
 
-        if (isLoaded && transactions.length === 0)
+        if (transactions.length === 0)
             return (
                 <Card small className="mb-4">
                     <CardHeader>
@@ -81,16 +65,8 @@ class AllTransactionsTable extends React.Component {
                     </CardHeader>
                 </Card>
             );
-        else if (isLoaded && transactions.length > 0)
+        else if (transactions.length > 0)
             return this.displayChart();
-        else
-            return (
-                <Card small className="mb-4">
-                    <CardHeader>
-                        <h1 className="m-0">Loading...</h1>
-                    </CardHeader>
-                </Card>
-            )
     }
 }
 
