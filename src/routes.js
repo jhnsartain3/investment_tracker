@@ -9,8 +9,7 @@ import StockOverviewScreen from "./pages/StockOverviewScreen";
 import RegistrationScreen from "./pages/RegistrationScreen";
 import withAuthentication from "./authentication/higherOrderComponents/withAuthentication";
 import Empty from "./components/layout/default layout/Empty";
-import LoginForm from "./authentication/components/LoginForm";
-import LoginScreen from "./pages/LoginScreen";
+import SignInScreen from "./pages/SignInScreen";
 
 export default [
     {
@@ -37,7 +36,7 @@ export default [
     {
         path: "/login",
         layout: Empty,
-        component: LoginForm
+        component: SignInScreen
     },
     {
         path: "/registration",
