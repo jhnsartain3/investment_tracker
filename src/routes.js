@@ -37,7 +37,7 @@ export default [
     {
         path: "/login",
         layout: Empty,
-        component: LoginForm
+        component: LoginScreen
     },
     {
         path: "/registration",
