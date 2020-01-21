@@ -10,6 +10,7 @@ import RegistrationScreen from "./pages/RegistrationScreen";
 import withAuthentication from "./authentication/higherOrderComponents/withAuthentication";
 import Empty from "./components/layout/default layout/Empty";
 import SignInScreen from "./pages/SignInScreen";
+import OwnedCompaniesScreen from "./pages/OwnedCompaniesScreen";
 
 export default [
     {
@@ -32,6 +33,11 @@ export default [
         path: "/transactions-list",
         layout: DefaultLayout,
         component: withAuthentication(AllTransactionsScreen)
+    },
+    {
+        path: "/owned-companies",
+        layout: DefaultLayout,
+        component: withAuthentication(OwnedCompaniesScreen)
     },
     {
         path: "/login",
