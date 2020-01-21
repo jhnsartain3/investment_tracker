@@ -14,6 +14,11 @@ export default function () {
             title: "Transactions",
             to: "/transactions-list",
             htmlBefore: '<i class="material-icons">view_module</i>'
+        },
+        {
+            title: "Performance by Ticker",
+            to: "/owned-companies",
+            htmlBefore: '<i class="material-icons">vertical_split</i>'
         }
     ];
 }
