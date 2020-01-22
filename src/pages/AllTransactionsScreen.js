@@ -5,6 +5,7 @@ import PageTitle from "../components/common/PageTitle";
 import AllTransactionsTable from "../components/tiles/AllTransactionsTable";
 import BuySellDividendRatioGraph from "../components/tiles/BuySellDividendRatioGraph";
 import AccessApiWrapper from "../components/api/AccessApiWrapper";
+import SubmitTransactionsFiles from "../components/tiles/SubmitTransactionsFiles";
 
 const accessApiWrapper = new AccessApiWrapper();
 
@@ -75,6 +76,10 @@ class AllTransactionsScreen extends React.Component {
                         <Col lg="8" md="12" sm="12" className="mb-4">
                             <AllTransactionsTable transactions={this.state.transactions} headers={["Date", "Type", "Ticker", "X", "Price", "Total"]}
                                                   title={"All Transactions"}/>
+                        </Col>
+
+                        <Col lg="4" md="6" sm="12" className="mb-4">
+                            <SubmitTransactionsFiles />
                         </Col>
 
                         {/* Ratio buy/sell */}

@@ -59,6 +59,28 @@ class AccessApi extends React.Component {
         )
     }
 
+    postFormData(urlExtension, data) {
+        const url = this.state.url + urlExtension;
+
+        return new Promise(function (resolve) {
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + authenticationService.getToken(),
+                    },
+                    body: data
+                })
+                    .then(res => res.json())
+                    .then((result) => {
+                            return resolve(result)
+                        },
+                        (error) => {
+                            return resolve(error)
+                        });
+            }
+        )
+    }
+
     deleteData(urlExtension, uid) {
         const url = this.state.url + urlExtension;
 
