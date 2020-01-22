@@ -12,15 +12,15 @@ self.__precacheManifest = [
     "url": "/investment_tracker/static/js/runtime~main.cb84bc00.js"
   },
   {
-    "revision": "6a66303732c9c2170519",
-    "url": "/investment_tracker/static/js/main.6a663037.chunk.js"
+    "revision": "593415bfbdfd6bebddf0",
+    "url": "/investment_tracker/static/js/main.593415bf.chunk.js"
   },
   {
     "revision": "3ef0601736818ae5000c",
     "url": "/investment_tracker/static/js/1.3ef06017.chunk.js"
   },
   {
-    "revision": "6a66303732c9c2170519",
+    "revision": "593415bfbdfd6bebddf0",
     "url": "/investment_tracker/static/css/main.df0b09df.chunk.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/investment_tracker/static/css/1.5f6d7622.chunk.css"
   },
   {
-    "revision": "b0b035dfcc6e97b96f830471155876f4",
+    "revision": "bbb72076ff69f111a1341074692e7604",
     "url": "/investment_tracker/index.html"
   }
 ];
