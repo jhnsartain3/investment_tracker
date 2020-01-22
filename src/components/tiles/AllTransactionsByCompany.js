@@ -11,16 +11,15 @@ class AllTransactionsByCompany extends Component {
     }
 
     generateRows() {
-        console.log(this.props.transactions)
         return this.props.transactions.map((x, i) => (
                 <tr>
                     <td>{x.name}</td>
                     <td>{x.ticker}</td>
                     <td>${x.totalProfit.toFixed(2)}</td>
-                    <td>{x.totalProfitPercentage}</td>
                 </tr>
             )
         );
+        // <td>{x.totalProfitPercentage}</td>
     }
 
     formatDate(unformattedDate) {
