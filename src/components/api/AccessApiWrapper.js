@@ -14,6 +14,10 @@ class AccessApiWrapper extends AccessAPI {
         return super.postData(urlExtension, data);
     }
 
+    postFormData(urlExtension, data) {
+        return super.postFormData(urlExtension, data);
+    }
+
     deleteData(urlExtension, uid) {
         return super.deleteData(urlExtension, uid);
     }
