@@ -1,51 +1,90 @@
-import React from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
-import {Col, Container, Row} from "shards-react";
+import {Card, CardHeader, Col, Container, Row} from "shards-react";
 
 import PageTitle from "./../components/common/PageTitle";
 import SmallStats from "./../components/common/SmallStats";
 import StockGraph from "../components/tiles/StockGraph";
 import TopStocks from "../components/tiles/TopStocks";
+import AccessApiWrapper from "../components/api/AccessApiWrapper";
 
-const DashboardOverviewScreen = ({smallStats}) => (
-    <Container fluid className="main-content-container px-4">
-        {/* Page Header */}
-        <Row noGutters className="page-header py-4">
-            <PageTitle title="Overview" subtitle="Dashboard" className="text-sm-left mb-3"/>
-        </Row>
+const accessApiWrapper = new AccessApiWrapper();
 
-        {/* Small Stats Blocks */}
-        <Row>
-            {smallStats.map((stats, idx) => (
-                <Col className="col-lg mb-4" key={idx} {...stats.attrs}>
-                    <SmallStats
-                        id={`small-stats-${idx}`}
-                        variation="1"
-                        chartData={stats.datasets}
-                        chartLabels={stats.chartLabels}
-                        label={stats.label}
-                        value={stats.value}
-                        percentage={stats.percentage}
-                        increase={stats.increase}
-                        decrease={stats.decrease}
-                    />
-                </Col>
-            ))}
-        </Row>
+class DashboardOverviewScreen extends Component {
+    constructor(props) {
+        super(props);
 
-        <Row>
-            {/* Editor */}
-            <Col lg="8" md="12" sm="12" className="mb-4">
-                <StockGraph/>
-            </Col>
-            {/* Users by Device */}
-            <Col lg="4" md="6" sm="12" className="mb-4">
-                <TopStocks/>
-            </Col>
-        </Row>
+        this.state = {
+            stockStats: {}
+        }
+    }
 
-    </Container>
-);
+    componentWillMount() {
+        accessApiWrapper.getData("/HighestPerformingStock").then((result) => {
+            this.setState({
+                    isLoaded: true,
+                    stockStats: result,
+                }
+            );
+        });
+    }
+
+    render() {
+        let {smallStats} = this.props;
+        let {stockStats, isLoaded} = this.state;
+
+        if (isLoaded === true) {
+            smallStats[0].label = smallStats[0].label + ": " + stockStats.ticker;
+            smallStats[0].value = "$" +stockStats.amount.toFixed(2);
+            return (
+                <Container fluid className="main-content-container px-4">
+                    {/* Page Header */}
+                    <Row noGutters className="page-header py-4">
+                        <PageTitle title="Overview" subtitle="Dashboard" className="text-sm-left mb-3"/>
+                    </Row>
+
+                    {/* Small Stats Blocks */}
+                    <Row>
+                        {smallStats.map((stats, idx) => (
+                            <Col className="col-lg mb-4" key={idx} {...stats.attrs}>
+                                <SmallStats
+                                    id={`small-stats-${idx}`}
+                                    variation="1"
+                                    chartData={stats.datasets}
+                                    chartLabels={stats.chartLabels}
+                                    label={stats.label}
+                                    value={stats.value}
+                                    percentage={stats.percentage}
+                                    increase={stats.increase}
+                                    decrease={stats.decrease}
+                                />
+                            </Col>
+                        ))}
+                    </Row>
+
+                    <Row>
+                        {/* Editor */}
+                        <Col lg="8" md="12" sm="12" className="mb-4">
+                            <StockGraph/>
+                        </Col>
+                        {/* Users by Device */}
+                        <Col lg="4" md="6" sm="12" className="mb-4">
+                            <TopStocks/>
+                        </Col>
+                    </Row>
+                </Container>
+            );
+        } else {
+            return (
+                <Card small className="mb-4">
+                    <CardHeader>
+                        <h1 className="m-0">Loading</h1>
+                    </CardHeader>
+                </Card>
+            )
+        }
+    }
+}
 
 DashboardOverviewScreen.propTypes = {
     /**
