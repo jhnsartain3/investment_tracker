@@ -17,7 +17,8 @@ class SubmitTransactionsFiles extends Component {
             priceField: "",
             totalField: "",
             type: "buy",
-            dateField: ""
+            dateField: "",
+            progressCounter: 0
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -38,7 +39,8 @@ class SubmitTransactionsFiles extends Component {
 
         this.setState(
             {
-                file: event.target.files[0]
+                file: event.target.files[0],
+                fileCharacterEstimatedTimeToUpload: ((event.target.files[0].size / 50) / 13) * 1000
             }
         )
     }
@@ -49,9 +51,29 @@ class SubmitTransactionsFiles extends Component {
 
         let data = this.state.file;
 
-        formData.append('file', data)
+        formData.append('file', data);
 
-        accessApiWrapper.postFormData("/TransactionFile", formData);
+        var fileCharacterEstimatedTimeToUpload = this.state.fileCharacterEstimatedTimeToUpload;
+
+        setTimeout(() => {
+            this.setState({progressCounter: 25});
+        }, fileCharacterEstimatedTimeToUpload * .25);
+
+        setTimeout(() => {
+            this.setState({progressCounter: 50});
+        }, fileCharacterEstimatedTimeToUpload * .50);
+
+        setTimeout(() => {
+            this.setState({progressCounter: 75});
+        }, fileCharacterEstimatedTimeToUpload * .75);
+
+        setTimeout(() => {
+            this.setState({progressCounter: 100});
+        }, fileCharacterEstimatedTimeToUpload * 1);
+
+        accessApiWrapper.postFormData("/TransactionFile", formData).then(() => {
+            this.setState({progressCounter: 100})
+        });
     }
 
     render() {
@@ -62,7 +84,8 @@ class SubmitTransactionsFiles extends Component {
                 </CardHeader>
 
                 <CardBody className="mb-0">
-                    <CustomFileUpload setFile={this.setFile} buttonClick={this.handleFormSubmit}/>
+                    <CustomFileUpload setFile={this.setFile} buttonClick={this.handleFormSubmit}
+                                      progressCounter={this.state.progressCounter}/>
                 </CardBody>
             </Card>
         );
