@@ -67,6 +67,7 @@ export default function LoginForm(props) {
                         error={!props.isUsernameFieldValid}
                         fullWidth
                         id="email"
+                        helperText={props.helperTextUsernameField}
                         onChange={props.onChange}
                         label="Email Address"
                         name="username"
@@ -77,6 +78,7 @@ export default function LoginForm(props) {
                         variant="outlined"
                         margin="normal"
                         required
+                        helperText={props.helperTextPasswordField}
                         fullWidth
                         onChange={props.onChange}
                         error={!props.isPasswordFieldValid}
