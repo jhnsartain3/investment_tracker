@@ -15,15 +15,26 @@ class DashboardOverviewScreen extends Component {
         super(props);
 
         this.state = {
-            stockStats: {}
+            isHighestPerformingStockLoaded: false,
+            isLowestPerformingStockLoaded: false,
+            HighestPerformingStock: {},
+            LowestPerformingStock: {}
         }
     }
 
     componentWillMount() {
         accessApiWrapper.getData("/HighestPerformingStock").then((result) => {
             this.setState({
-                    isLoaded: true,
-                    stockStats: result,
+                isHighestPerformingStockLoaded: true,
+                    HighestPerformingStock: result,
+                }
+            );
+        });
+
+        accessApiWrapper.getData("/LowestPerformingStock").then((result) => {
+            this.setState({
+                isLowestPerformingStockLoaded: true,
+                    LowestPerformingStock: result,
                 }
             );
         });
@@ -31,11 +42,14 @@ class DashboardOverviewScreen extends Component {
 
     render() {
         let {smallStats} = this.props;
-        let {stockStats, isLoaded} = this.state;
+        let {HighestPerformingStock, LowestPerformingStock, isHighestPerformingStockLoaded, isLowestPerformingStockLoaded} = this.state;
 
-        if (isLoaded === true) {
-            smallStats[0].label = smallStats[0].label + ": " + stockStats.ticker;
-            smallStats[0].value = "$" +stockStats.amount.toFixed(2);
+        if (isHighestPerformingStockLoaded === true && isLowestPerformingStockLoaded === true) {
+            smallStats[0].label = smallStats[0].label + ": " + HighestPerformingStock.ticker;
+            smallStats[0].value = "$" + HighestPerformingStock.amount.toFixed(2);
+
+            smallStats[4].label = smallStats[4].label + ": " + LowestPerformingStock.ticker;
+            smallStats[4].value = "$" + LowestPerformingStock.amount.toFixed(2);
             return (
                 <Container fluid className="main-content-container px-4">
                     {/* Page Header */}
