@@ -78,7 +78,7 @@ class SubmitTransactionsFiles extends Component {
 
     render() {
         return (
-            <Card>
+            <Card small className="mb-4">
                 <CardHeader className="border-bottom">
                     <h6 className="m-0">Submit Transaction File</h6>
                 </CardHeader>

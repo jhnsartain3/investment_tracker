@@ -80,10 +80,6 @@ class AllTransactionsScreen extends React.Component {
 
                         <Col lg="4" md="6" sm="12" className="mb-4">
                             <SubmitTransactionsFiles />
-                        </Col>
-
-                        {/* Ratio buy/sell */}
-                        <Col lg="4" md="6" sm="12" className="mb-4">
                             <BuySellDividendRatioGraph chartData={this.state.chartData}/>
                         </Col>
                     </Row>
