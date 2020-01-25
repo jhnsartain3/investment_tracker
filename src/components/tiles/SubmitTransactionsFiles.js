@@ -51,7 +51,7 @@ class SubmitTransactionsFiles extends Component {
 
         formData.append('file', data)
 
-        accessApiWrapper.postData("/TransactionFile", formData);
+        accessApiWrapper.postFormData("/TransactionFile", formData);
     }
 
     render() {
