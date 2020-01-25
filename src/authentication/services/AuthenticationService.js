@@ -21,9 +21,9 @@ export default class AuthenticationService {
                 username,
                 password
             })
-        }).then(res => {
-            this.setToken(res);
-            return Promise.resolve(res);
+        }).then(response => {
+            this.setToken(response);
+            return Promise.resolve(response);
         })
     }
 
@@ -82,9 +82,7 @@ export default class AuthenticationService {
         if (response.status >= 200 && response.status < 300) { // Success status lies between 200 to 300
             return response
         } else {
-            var error = new Error(response.statusText);
-            error.response = response;
-            throw error
+            return response;
         }
     }
 }
