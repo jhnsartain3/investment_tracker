@@ -17,8 +17,10 @@ class DashboardOverviewScreen extends Component {
         this.state = {
             isHighestPerformingStockLoaded: false,
             isLowestPerformingStockLoaded: false,
-            HighestPerformingStock: {},
-            LowestPerformingStock: {}
+            isTotalEarningsLoaded: false,
+            highestPerformingStock: {},
+            lowestPerformingStock: {},
+            totalEarnings: {}
         }
     }
 
@@ -26,7 +28,7 @@ class DashboardOverviewScreen extends Component {
         accessApiWrapper.getData("/HighestPerformingStock").then((result) => {
             this.setState({
                     isHighestPerformingStockLoaded: true,
-                    HighestPerformingStock: result,
+                    highestPerformingStock: result
                 }
             );
         });
@@ -34,7 +36,15 @@ class DashboardOverviewScreen extends Component {
         accessApiWrapper.getData("/LowestPerformingStock").then((result) => {
             this.setState({
                     isLowestPerformingStockLoaded: true,
-                    LowestPerformingStock: result,
+                    lowestPerformingStock: result
+                }
+            );
+        });
+
+        accessApiWrapper.getData("/TotalEarnings").then((result) => {
+            this.setState({
+                    isTotalEarningsLoaded: true,
+                    totalEarnings: result
                 }
             );
         });
@@ -42,14 +52,17 @@ class DashboardOverviewScreen extends Component {
 
     render() {
         let {smallStats} = this.props;
-        let {HighestPerformingStock, LowestPerformingStock, isHighestPerformingStockLoaded, isLowestPerformingStockLoaded} = this.state;
+        let {highestPerformingStock, lowestPerformingStock, totalEarnings, isHighestPerformingStockLoaded, isLowestPerformingStockLoaded, isTotalEarningsLoaded} = this.state;
 
-        if (isHighestPerformingStockLoaded === true && isLowestPerformingStockLoaded === true) {
-            smallStats[0].label = "Highest Performer: " + HighestPerformingStock.ticker;
-            smallStats[0].value = "$" + HighestPerformingStock.amount.toFixed(2);
+        if (isHighestPerformingStockLoaded === true && isLowestPerformingStockLoaded === true && isTotalEarningsLoaded) {
+            smallStats[0].label = "Highest Performer: " + highestPerformingStock.ticker;
+            smallStats[0].value = "$" + highestPerformingStock.amount.toFixed(2);
 
-            smallStats[4].label = "Lowest Performer: " + LowestPerformingStock.ticker;
-            smallStats[4].value = "$" + LowestPerformingStock.amount.toFixed(2);
+            smallStats[1].label = "Total Earnings";
+            smallStats[1].value = "$" + totalEarnings.amount.toFixed(2);
+
+            smallStats[4].label = "Lowest Performer: " + lowestPerformingStock.ticker;
+            smallStats[4].value = "$" + lowestPerformingStock.amount.toFixed(2);
             return (
                 <Container fluid className="main-content-container px-4">
                     {/* Page Header */}
