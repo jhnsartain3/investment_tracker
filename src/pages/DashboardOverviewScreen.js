@@ -22,10 +22,10 @@ class DashboardOverviewScreen extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         accessApiWrapper.getData("/HighestPerformingStock").then((result) => {
             this.setState({
-                isHighestPerformingStockLoaded: true,
+                    isHighestPerformingStockLoaded: true,
                     HighestPerformingStock: result,
                 }
             );
@@ -33,7 +33,7 @@ class DashboardOverviewScreen extends Component {
 
         accessApiWrapper.getData("/LowestPerformingStock").then((result) => {
             this.setState({
-                isLowestPerformingStockLoaded: true,
+                    isLowestPerformingStockLoaded: true,
                     LowestPerformingStock: result,
                 }
             );
@@ -45,10 +45,10 @@ class DashboardOverviewScreen extends Component {
         let {HighestPerformingStock, LowestPerformingStock, isHighestPerformingStockLoaded, isLowestPerformingStockLoaded} = this.state;
 
         if (isHighestPerformingStockLoaded === true && isLowestPerformingStockLoaded === true) {
-            smallStats[0].label = smallStats[0].label + ": " + HighestPerformingStock.ticker;
+            smallStats[0].label = "Highest Performer: " + HighestPerformingStock.ticker;
             smallStats[0].value = "$" + HighestPerformingStock.amount.toFixed(2);
 
-            smallStats[4].label = smallStats[4].label + ": " + LowestPerformingStock.ticker;
+            smallStats[4].label = "Lowest Performer: " + LowestPerformingStock.ticker;
             smallStats[4].value = "$" + LowestPerformingStock.amount.toFixed(2);
             return (
                 <Container fluid className="main-content-container px-4">
