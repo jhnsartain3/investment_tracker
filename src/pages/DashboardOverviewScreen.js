@@ -18,9 +18,13 @@ class DashboardOverviewScreen extends Component {
             isHighestPerformingStockLoaded: false,
             isLowestPerformingStockLoaded: false,
             isTotalEarningsLoaded: false,
+            isTotalDividendEarningsLoaded: false,
+            isCurrentMonthPerformanceLoaded: false,
             highestPerformingStock: {},
             lowestPerformingStock: {},
-            totalEarnings: {}
+            totalEarnings: {},
+            currentMonthPerformance: {},
+            totalDividendEarnings: {}
         }
     }
 
@@ -48,21 +52,49 @@ class DashboardOverviewScreen extends Component {
                 }
             );
         });
+
+        accessApiWrapper.getData("/TotalDividendEarnings").then((result) => {
+            this.setState({
+                    isTotalDividendEarningsLoaded: true,
+                    totalDividendEarnings: result
+                }
+            );
+        });
+
+        accessApiWrapper.getData("/CurrentMonthPerformance").then((result) => {
+            this.setState({
+                    isCurrentMonthPerformanceLoaded: true,
+                    currentMonthPerformance: result
+                }
+            );
+        });
     }
 
     render() {
         let {smallStats} = this.props;
-        let {highestPerformingStock, lowestPerformingStock, totalEarnings, isHighestPerformingStockLoaded, isLowestPerformingStockLoaded, isTotalEarningsLoaded} = this.state;
+        let {
+            highestPerformingStock, lowestPerformingStock, totalEarnings, totalDividendEarnings, currentMonthPerformance,
+            isHighestPerformingStockLoaded, isLowestPerformingStockLoaded, isTotalEarningsLoaded, isTotalDividendEarningsLoaded,
+            isCurrentMonthPerformanceLoaded
+        } = this.state;
 
-        if (isHighestPerformingStockLoaded === true && isLowestPerformingStockLoaded === true && isTotalEarningsLoaded) {
+        if (isHighestPerformingStockLoaded === true && isLowestPerformingStockLoaded === true && isTotalEarningsLoaded
+            && isTotalDividendEarningsLoaded === true && isCurrentMonthPerformanceLoaded === true) {
             smallStats[0].label = "Highest Performer: " + highestPerformingStock.ticker;
             smallStats[0].value = "$" + highestPerformingStock.amount.toFixed(2);
 
             smallStats[1].label = "Total Earnings";
             smallStats[1].value = "$" + totalEarnings.amount.toFixed(2);
 
+            smallStats[2].label = "Total Dividend Earnings";
+            smallStats[2].value = "$" + totalDividendEarnings.amount.toFixed(2);
+
+            smallStats[3].label = "Current Month Performance";
+            smallStats[3].value = "$" + currentMonthPerformance.amount.toFixed(2);
+
             smallStats[4].label = "Lowest Performer: " + lowestPerformingStock.ticker;
             smallStats[4].value = "$" + lowestPerformingStock.amount.toFixed(2);
+
             return (
                 <Container fluid className="main-content-container px-4">
                     {/* Page Header */}
