@@ -10,7 +10,8 @@ import RegistrationScreen from "./pages/RegistrationScreen";
 import withAuthentication from "./authentication/higherOrderComponents/withAuthentication";
 import Empty from "./components/layout/default layout/Empty";
 import SignInScreen from "./pages/SignInScreen";
-import OwnedCompaniesScreen from "./pages/OwnedCompaniesScreen";
+import OwnedCompaniesScreen from "./pages/OwnedTickersScreen";
+import TransactionsByTicker from "./pages/TransactionsByTicker";
 
 export default [
     {
@@ -35,9 +36,14 @@ export default [
         component: withAuthentication(AllTransactionsScreen)
     },
     {
-        path: "/owned-companies",
+        path: "/owned-tickers",
         layout: DefaultLayout,
         component: withAuthentication(OwnedCompaniesScreen)
+    },
+    {
+        path: "/transactions-by-ticker",
+        layout: DefaultLayout,
+        component: withAuthentication(TransactionsByTicker)
     },
     {
         path: "/login",

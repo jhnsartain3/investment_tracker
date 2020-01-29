@@ -3,20 +3,22 @@ import {Card, CardHeader, Col, Container, Row} from "shards-react";
 
 import PageTitle from "../components/common/PageTitle";
 import AccessApiWrapper from "../components/api/AccessApiWrapper";
-import AllTransactionsByCompany from "../components/tiles/AllTransactionsByCompany";
+import AllTransactionsTable from "../components/tiles/AllTransactionsTable";
 
 const accessApiWrapper = new AccessApiWrapper();
 
-class OwnedCompaniesScreen extends React.Component {
+class TransactionsByTicker extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             chartData: null,
+            transactions: [],
             isLoaded: false
         };
 
         this.determineChartData = this.determineChartData.bind(this);
+        this.getTransactionDataForChart = this.getTransactionDataForChart.bind(this);
     }
 
     determineChartData(result) {
@@ -46,9 +48,24 @@ class OwnedCompaniesScreen extends React.Component {
         };
     }
 
+    getTransactionDataForChart() {
+        var stuff = this.state.transactions.map((transaction) => {
+            return transaction.transactionModels.map((data) => {
+                return data
+            })
+        })
+
+        return stuff.map((ex)=>{
+            console.log(ex)
+            return <AllTransactionsTable transactions={ex}
+                                         headers={["Date", "Type", "Ticker", "X", "Price", "Total"]}
+                                         title={ex[0].ticker.toUpperCase()}/>
+        })
+    }
+
     componentWillMount() {
-        accessApiWrapper.getData("/Transactions-By-Company-Summary").then((result) => {
-            result.forEach((x)=>{
+        accessApiWrapper.getData("/Transactions-By-Company").then((result) => {
+            result.forEach((x) => {
                 x.name = "Unknown"
                 delete x.totalProfitPercentage
             });
@@ -76,9 +93,7 @@ class OwnedCompaniesScreen extends React.Component {
 
                     <Row>
                         <Col lg="8" md="12" sm="12" className="mb-4">
-                            <AllTransactionsByCompany transactions={this.state.transactions}
-                                                      headers={["Name", "Ticker", "Total Profit"]}
-                                                      title={"All Transactions by company"}/>
+                            {this.getTransactionDataForChart()}
                         </Col>
                     </Row>
                 </Container>
@@ -101,4 +116,4 @@ class OwnedCompaniesScreen extends React.Component {
     }
 }
 
-export default OwnedCompaniesScreen;
+export default TransactionsByTicker;
