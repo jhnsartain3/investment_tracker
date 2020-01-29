@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Card, CardBody, CardHeader} from "shards-react";
 
-class AllTransactionsByCompany extends Component {
+class TotalEarningsByTicker extends Component {
     constructor(props) {
         super(props);
     }
@@ -68,4 +68,4 @@ class AllTransactionsByCompany extends Component {
     }
 }
 
-export default AllTransactionsByCompany;
+export default TotalEarningsByTicker;
