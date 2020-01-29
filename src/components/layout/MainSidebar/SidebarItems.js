@@ -16,8 +16,13 @@ export default function () {
             htmlBefore: '<i class="material-icons">view_module</i>'
         },
         {
-            title: "Performance by Ticker",
-            to: "/owned-companies",
+            title: "Transactions by Ticker",
+            to: "/transactions-by-ticker",
+            htmlBefore: '<i class="material-icons">vertical_split</i>'
+        },
+        {
+            title: "Owned Tickers",
+            to: "/owned-tickers",
             htmlBefore: '<i class="material-icons">vertical_split</i>'
         }
     ];
