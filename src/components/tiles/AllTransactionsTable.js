@@ -14,11 +14,11 @@ class AllTransactionsTable extends React.Component {
         return this.props.transactions.map((x, i) => (
                 <tr>
                     <td>{this.formatDate(x.date)}</td>
-                    <td>{x.type}</td>
-                    <td>{x.ticker}</td>
+                    <td>{x.type.toUpperCase()}</td>
+                    <td>{x.ticker.toUpperCase()}</td>
                     <td>{x.quantity}</td>
-                    <td>${x.price}</td>
-                    <td>${x.total}</td>
+                    <td>${x.price.toFixed(2)}</td>
+                    <td>${x.total.toFixed(2)}</td>
                 </tr>
             )
         );

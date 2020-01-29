@@ -52,8 +52,8 @@ class SubmitNewTransaction extends Component {
                 price: parseFloat(this.state.priceField),
                 total: parseFloat(this.state.totalField),
                 quantity: parseInt(this.state.quantityField),
-                type: this.state.type,
-                ticker: this.props.ticker,
+                type: this.state.type.toLowerCase(),
+                ticker: this.props.ticker.toLowerCase(),
                 date: this.state.dateField
             }
         };
