@@ -47,7 +47,7 @@ class OwnedCompaniesScreen extends React.Component {
     }
 
     componentWillMount() {
-        accessApiWrapper.getData("/all-companies-with-summary-of-transactions").then((result) => {
+        accessApiWrapper.getData("/Transactions-By-Company-Summary").then((result) => {
             result.forEach((x)=>{
                 x.name = "Unknown"
                 delete x.totalProfitPercentage
