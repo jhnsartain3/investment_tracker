@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c9525d49109f5cfaedc4",
+    "revision": "012e86a069c0a47459db",
     "url": "/investment_tracker/static/css/main.f7f5bdc7.chunk.css"
   },
   {
-    "revision": "c9525d49109f5cfaedc4",
-    "url": "/investment_tracker/static/js/main.c9525d49.chunk.js"
+    "revision": "012e86a069c0a47459db",
+    "url": "/investment_tracker/static/js/main.012e86a0.chunk.js"
   },
   {
     "revision": "21aa15be7a34aa01fb55",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/investment_tracker/static/media/shards-dashboards-logo.161c7399.svg"
   },
   {
-    "revision": "b1769e9cfcfd6f3d3d5734f223d7edc9",
+    "revision": "8cdde0018222566cce69e048fe11f7f4",
     "url": "/investment_tracker/index.html"
   }
 ];
