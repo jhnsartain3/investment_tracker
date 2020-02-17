@@ -48,11 +48,6 @@ class OwnedTickersScreen extends React.Component {
 
     componentWillMount() {
         accessApiWrapper.getData("/Transactions-By-Company-Summary").then((result) => {
-            result.forEach((x)=>{
-                x.name = "Unknown"
-                delete x.totalProfitPercentage
-            });
-
             this.setState({
                     chartData: this.determineChartData(result),
                     isLoaded: true,
@@ -77,8 +72,8 @@ class OwnedTickersScreen extends React.Component {
                     <Row>
                         <Col lg="8" md="12" sm="12" className="mb-4">
                             <TotalEarningsByTicker transactions={this.state.transactions}
-                                                      headers={["Name", "Ticker", "Total Profit"]}
-                                                      title={"All Transactions by company"}/>
+                                                   headers={["Name", "Ticker", "Total Profit", "Total Percent Change"]}
+                                                   title={"All Transactions by company"}/>
                         </Col>
                     </Row>
                 </Container>

@@ -16,10 +16,10 @@ class TotalEarningsByTicker extends Component {
                     <td>{x.name.toUpperCase()}</td>
                     <td>{x.ticker.toUpperCase()}</td>
                     <td>${x.totalProfit.toFixed(2)}</td>
+                    <td>{x.totalProfitPercentage}</td>
                 </tr>
             )
         );
-        // <td>{x.totalProfitPercentage}</td>
     }
 
     formatDate(unformattedDate) {
