@@ -13,10 +13,10 @@ class TotalEarningsByTicker extends Component {
     generateRows() {
         return this.props.transactions.map((x, i) => (
                 <tr>
-                    <td>{x.name.toUpperCase()}</td>
+                    <td>{x.name != null ? x.name.toUpperCase() : "Unknown"}</td>
                     <td>{x.ticker.toUpperCase()}</td>
                     <td>${x.totalProfit.toFixed(2)}</td>
-                    <td>{x.totalProfitPercentage}</td>
+                    <td>{x.totalProfitPercentage.toFixed(0)}%</td>
                 </tr>
             )
         );
