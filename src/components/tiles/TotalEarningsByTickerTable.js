@@ -2,10 +2,6 @@ import React, {Component} from "react";
 import {Card, CardBody, CardHeader} from "shards-react";
 
 class TotalEarningsByTicker extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     generateHeaders() {
         return this.props.headers.map((header) => (<th scope="col" className="border-0">{header}</th>));
     }
@@ -20,14 +16,6 @@ class TotalEarningsByTicker extends Component {
                 </tr>
             )
         );
-    }
-
-    formatDate(unformattedDate) {
-        let year = unformattedDate.substring(0, 4);
-        let month = unformattedDate.substring(5, 7);
-        let day = unformattedDate.substring(8, 10);
-
-        return month + "/" + day + "/" + year;
     }
 
     displayChart() {

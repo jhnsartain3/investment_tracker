@@ -2,10 +2,6 @@ import * as React from "react";
 import AccessAPI from "./AccessApi";
 
 class AccessApiWrapper extends AccessAPI {
-    constructor(props) {
-        super(props);
-    }
-
     getData(item) {
         return super.getData(item);
     }

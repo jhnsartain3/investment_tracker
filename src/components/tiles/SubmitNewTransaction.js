@@ -12,7 +12,6 @@ import {
 } from "shards-react";
 import React, {Component} from "react";
 import AccessApiWrapper from "../api/AccessApiWrapper";
-import ReactDatePicker from "react-datepicker";
 
 var accessApiWrapper = new AccessApiWrapper();
 

@@ -2,10 +2,6 @@ import React from "react";
 import {Card, CardBody, CardHeader} from "shards-react";
 
 class AllTransactionsTable extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     generateHeaders() {
         return this.props.headers.map((header) => (<th scope="col" className="border-0">{header}</th>));
     }

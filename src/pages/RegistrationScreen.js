@@ -1,9 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import FormValidation from "../components/tiles/FormValidation";
 import {Card, Col, Container, Row} from "shards-react";
 
-const RegistrationScreen = ({smallStats}) => (
+const RegistrationScreen = () => (
     <Container fluid className="main-content-container px-4 pb-4">
         <div className="error">
             <div className="error__content">
