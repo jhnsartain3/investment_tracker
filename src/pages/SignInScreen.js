@@ -21,7 +21,7 @@ class SignInScreen extends Component {
         this.AuthService = new AuthenticationService();
     }
 
-    componentWillMount() {
+    componentDidMount() {
         if (this.AuthService.loggedIn()) {
             this.props.history.replace('/');
         }

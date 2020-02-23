@@ -46,7 +46,7 @@ class OwnedTickersScreen extends React.Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         accessApiWrapper.getData("/Transactions-By-Company-Summary").then((result) => {
             this.setState({
                     chartData: this.determineChartData(result),

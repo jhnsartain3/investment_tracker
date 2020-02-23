@@ -48,7 +48,7 @@ class AllTransactionsScreen extends React.Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         accessApiWrapper.getData("/Transaction").then((result) => {
             this.setState({
                     chartData: this.determineChartData(result),

@@ -11,7 +11,7 @@ export default function withAuthentication(AuthComponent) {
             }
         }
 
-        componentWillMount() {
+        componentDidMount() {
             if (!AuthService.loggedIn()) {
                 this.props.history.replace('/login')
             } else {

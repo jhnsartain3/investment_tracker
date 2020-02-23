@@ -63,7 +63,7 @@ class TransactionsByTicker extends React.Component {
         })
     }
 
-    componentWillMount() {
+    componentDidMount() {
         accessApiWrapper.getData("/Transactions-By-Company").then((result) => {
             result.forEach((x) => {
                 x.name = "Unknown"
