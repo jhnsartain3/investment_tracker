@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/investment_tracker/static/media/shards-dashboards-logo.161c7399.svg"
   },
   {
-    "revision": "fa262d328ee96b20a9e8ad1ecb7664ed",
+    "revision": "cbf3d4e1591c171f63a2ee10f629062d",
     "url": "/investment_tracker/index.html"
   }
 ];
