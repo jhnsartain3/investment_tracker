@@ -22,7 +22,7 @@ export default class AuthenticationService {
                 password
             })
         }).then(response => {
-            this.setToken(response);
+            this.setToken(response.token);
             return Promise.resolve(response);
         })
     }
