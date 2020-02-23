@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/investment_tracker/static/css/main.39157d1d.chunk.css",
-    "main.js": "/investment_tracker/static/js/main.52ff3b1c.chunk.js",
-    "main.js.map": "/investment_tracker/static/js/main.52ff3b1c.chunk.js.map",
+    "main.js": "/investment_tracker/static/js/main.3321f592.chunk.js",
+    "main.js.map": "/investment_tracker/static/js/main.3321f592.chunk.js.map",
     "runtime-main.js": "/investment_tracker/static/js/runtime-main.e5f8d50a.js",
     "runtime-main.js.map": "/investment_tracker/static/js/runtime-main.e5f8d50a.js.map",
     "static/css/2.47e06e2e.chunk.css": "/investment_tracker/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.a8ad7d2d.chunk.js": "/investment_tracker/static/js/2.a8ad7d2d.chunk.js",
-    "static/js/2.a8ad7d2d.chunk.js.map": "/investment_tracker/static/js/2.a8ad7d2d.chunk.js.map",
+    "static/js/2.6324d329.chunk.js": "/investment_tracker/static/js/2.6324d329.chunk.js",
+    "static/js/2.6324d329.chunk.js.map": "/investment_tracker/static/js/2.6324d329.chunk.js.map",
     "index.html": "/investment_tracker/index.html",
-    "precache-manifest.de35f5fe37b459844925e50cad5f797e.js": "/investment_tracker/precache-manifest.de35f5fe37b459844925e50cad5f797e.js",
+    "precache-manifest.bd803155f8f7ee721c7ea3d2e521f18e.js": "/investment_tracker/precache-manifest.bd803155f8f7ee721c7ea3d2e521f18e.js",
     "service-worker.js": "/investment_tracker/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/investment_tracker/static/css/2.47e06e2e.chunk.css.map",
     "static/css/main.39157d1d.chunk.css.map": "/investment_tracker/static/css/main.39157d1d.chunk.css.map",
-    "static/js/2.a8ad7d2d.chunk.js.LICENSE.txt": "/investment_tracker/static/js/2.a8ad7d2d.chunk.js.LICENSE.txt",
+    "static/js/2.6324d329.chunk.js.LICENSE.txt": "/investment_tracker/static/js/2.6324d329.chunk.js.LICENSE.txt",
     "static/media/0.jpg": "/investment_tracker/static/media/0.73476783.jpg",
     "static/media/shards-dashboards-logo.svg": "/investment_tracker/static/media/shards-dashboards-logo.161c7399.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.e5f8d50a.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.a8ad7d2d.chunk.js",
+    "static/js/2.6324d329.chunk.js",
     "static/css/main.39157d1d.chunk.css",
-    "static/js/main.52ff3b1c.chunk.js"
+    "static/js/main.3321f592.chunk.js"
   ]
 }
