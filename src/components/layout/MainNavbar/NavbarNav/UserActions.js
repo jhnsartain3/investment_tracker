@@ -31,7 +31,7 @@ export default class UserActions extends React.Component {
                         src={require("../../../../assets/images/avatars/0.jpg")}
                         alt="User Avatar"
                     />{" "}
-                    <span className="d-none d-md-inline-block">Sierra Brooks</span>
+                    <span className="d-none d-md-inline-block">{AuthService.getProfile().given_name[0]}</span>
                 </DropdownToggle>
                 <Collapse tag={DropdownMenu} right small open={this.state.visible}>
                     <DropdownItem tag={Link} to="user-profile">
