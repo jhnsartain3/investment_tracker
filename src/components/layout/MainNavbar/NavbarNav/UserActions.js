@@ -28,7 +28,7 @@ export default class UserActions extends React.Component {
                 <DropdownToggle caret tag={NavLink} className="text-nowrap px-3">
                     <img
                         className="user-avatar rounded-circle mr-2"
-                        src={require("../../../../assets/images/avatars/0.jpg")}
+                        src={require("../../../../assets/images/generic-user-icon.jpg")}
                         alt="User Avatar"
                     />{" "}
                     <span className="d-none d-md-inline-block">{AuthService.getProfile().given_name[0]}</span>
