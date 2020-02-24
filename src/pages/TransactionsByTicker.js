@@ -63,7 +63,7 @@ class TransactionsByTicker extends React.Component {
     }
 
     componentDidMount() {
-        accessApiWrapper.getData("/Transactions-By-Company").then((result) => {
+        accessApiWrapper.getData("/All-Transactions-By-Company").then((result) => {
             result.forEach((x) => {
                 x.name = "Unknown"
                 delete x.totalProfitPercentage
