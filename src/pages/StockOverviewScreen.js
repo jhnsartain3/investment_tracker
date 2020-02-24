@@ -6,6 +6,7 @@ import StockGraph from "../components/tiles/StockGraph";
 import SubmitNewTransaction from "../components/tiles/SubmitNewTransaction";
 import StockPickerDropdown from "../components/tiles/StockPickerDropdown";
 import AccessApiWrapper from "../components/api/AccessApiWrapper";
+import AllTransactionsTable from "../components/tiles/AllTransactionsTable";
 
 const accessApiWrapper = new AccessApiWrapper();
 
@@ -15,12 +16,17 @@ class StockOverviewScreen extends Component {
 
         this.state = {
             tickerList: [],
+            transactions: [],
             selectedTicker: "Stock Name"
         }
     }
 
     receiveStockTicker = (selectedTicker) => {
         this.setState({selectedTicker: selectedTicker});
+
+        accessApiWrapper.getData("/Transactions-By-Company/" + selectedTicker).then((result) => {
+            this.setState({transactions: result});
+        });
     };
 
     componentDidMount() {
@@ -48,6 +54,14 @@ class StockOverviewScreen extends Component {
                     {/* Groups */}
                     <Col lg="3" md="6" sm="12" className="mb-4">
                         <SubmitNewTransaction ticker="test"/>
+                    </Col>
+                </Row>
+
+                <Row noGutters className="page-header py-4">
+                    <Col lg="8" md="12" sm="12" className="mb-4">
+                        <AllTransactionsTable transactions={this.state.transactions}
+                                              headers={["Date", "Type", "Ticker", "X", "Price", "Total"]}
+                                              title={"All " + this.state.selectedTicker.toUpperCase() + " Transactions"}/>
                     </Col>
                 </Row>
             </Container>
