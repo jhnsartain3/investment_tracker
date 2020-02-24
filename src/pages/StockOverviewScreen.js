@@ -48,7 +48,7 @@ class StockOverviewScreen extends Component {
                 <Row>
                     {/* Editor */}
                     <Col lg="9" md="12" sm="12" className="mb-4">
-                        <StockGraph/>
+                        <StockGraph title={this.state.selectedTicker.toUpperCase() + " Overview"}/>
                     </Col>
 
                     {/* Groups */}
