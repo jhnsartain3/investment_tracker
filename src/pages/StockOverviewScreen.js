@@ -24,7 +24,7 @@ class StockOverviewScreen extends Component {
     receiveStockTicker = (selectedTicker) => {
         this.setState({selectedTicker: selectedTicker});
 
-        accessApiWrapper.getData("/Transactions-By-Company/" + selectedTicker).then((result) => {
+        accessApiWrapper.getData("/All-Transactions-By-Company/" + selectedTicker).then((result) => {
             this.setState({transactions: result});
         });
     };
