@@ -12,6 +12,7 @@ import Empty from "./components/layout/default layout/Empty";
 import SignInScreen from "./pages/SignInScreen";
 import OwnedCompaniesScreen from "./pages/OwnedTickersScreen";
 import TransactionsByTicker from "./pages/TransactionsByTicker";
+import ErrorScreen from "./pages/ErrorScreen";
 
 export default [
     {
@@ -52,7 +53,12 @@ export default [
     },
     {
         path: "/registration",
+        layout: Empty,
+        component: ErrorScreen
+    },
+    {
+        path: "/error-screen",
         layout: DefaultLayout,
-        component: RegistrationScreen
+        component: ErrorScreen
     }
 ];
