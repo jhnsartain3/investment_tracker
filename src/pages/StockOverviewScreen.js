@@ -7,6 +7,7 @@ import SubmitNewTransaction from "../components/tiles/SubmitNewTransaction";
 import StockPickerDropdown from "../components/tiles/StockPickerDropdown";
 import AccessApiWrapper from "../components/api/AccessApiWrapper";
 import AllTransactionsTable from "../components/tiles/AllTransactionsTable";
+import CompanySummaryTile from "../components/tiles/CompanySummaryTile";
 
 const accessApiWrapper = new AccessApiWrapper();
 
@@ -26,6 +27,10 @@ class StockOverviewScreen extends Component {
 
         accessApiWrapper.getData("/All-Transactions-By-Company/" + selectedTicker).then((result) => {
             this.setState({transactions: result});
+        });
+
+        accessApiWrapper.getData("/Company-Profit-Summary/" + selectedTicker).then((result) => {
+            this.setState({summaryOfTransactions: result});
         });
     };
 
@@ -57,11 +62,19 @@ class StockOverviewScreen extends Component {
                     </Col>
                 </Row>
 
-                <Row noGutters className="page-header py-4">
+                <Row >
                     <Col lg="8" md="12" sm="12" className="mb-4">
                         <AllTransactionsTable transactions={this.state.transactions}
                                               headers={["Date", "Type", "Ticker", "X", "Price", "Total"]}
                                               title={"All " + this.state.selectedTicker.toUpperCase() + " Transactions"}/>
+                    </Col>
+
+                    <Col lg="3" md="6" sm="12" className="mb-4">
+                        <CompanySummaryTile
+                            name={this.state.summaryOfTransactions != null && this.state.summaryOfTransactions.name != null ? this.state.summaryOfTransactions.name : "Stock Name"}
+                            ticker={this.state.summaryOfTransactions != null && this.state.summaryOfTransactions.ticker != null ? this.state.summaryOfTransactions.ticker : "Ticker"}
+                            totalProfit={this.state.summaryOfTransactions != null && this.state.summaryOfTransactions.name != null ? this.state.summaryOfTransactions.totalProfit.toFixed(2) : "Total Profit"}
+                            totalProfitPercentage={this.state.summaryOfTransactions != null && this.state.summaryOfTransactions.name != null ? this.state.summaryOfTransactions.totalProfitPercentage : "Total Profit Percentage"}/>
                     </Col>
                 </Row>
             </Container>
