@@ -23,6 +23,10 @@ export default class UserActions extends React.Component {
     render() {
         const AuthService = new AuthenticationService();
 
+        let userName = null;
+        if (AuthService.getProfile() !== null)
+            userName = AuthService.getProfile().given_name[0];
+
         return (
             <NavItem tag={Dropdown} caret toggle={this.toggleUserActions}>
                 <DropdownToggle caret tag={NavLink} className="text-nowrap px-3">
@@ -31,7 +35,7 @@ export default class UserActions extends React.Component {
                         src={require("../../../../assets/images/generic-user-icon.jpg")}
                         alt="User Avatar"
                     />{" "}
-                    <span className="d-none d-md-inline-block">{AuthService.getProfile().given_name[0]}</span>
+                    <span className="d-none d-md-inline-block">{userName}</span>
                 </DropdownToggle>
                 <Collapse tag={DropdownMenu} right small open={this.state.visible}>
                     <DropdownItem tag={Link} to="error-screen">

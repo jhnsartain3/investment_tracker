@@ -56,7 +56,11 @@ export default class AuthenticationService {
 
     getProfile() {
         // Using jwt-decode npm package to decode the token
-        return decode(this.getToken());
+        try {
+            return decode(this.getToken());
+        } catch (exception) {
+            return null;
+        }
     }
 
     fetch(url, options) {
