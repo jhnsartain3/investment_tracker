@@ -19,3 +19,6 @@ Ability to see all companies a user owns and the performance of those transactio
 
 ### Transactions By Ticker
 Ability to see all transactions by company a user has made.
+
+## Diagram
+* [Diagram of complete process](https://www.draw.io/?title=Invesment%20Tracker#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1DJbCbDrAteByGDpSJkANhYIgzMBlXEIJ%26export%3Ddownload)
