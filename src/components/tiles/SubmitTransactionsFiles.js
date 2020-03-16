@@ -76,6 +76,8 @@ class SubmitTransactionsFiles extends Component {
         accessApiWrapper.postFormData("/TransactionsFile", formData).then((result) => {
             this.setState({progressCounter: 100});
 
+            this.setState({successFileUploadMessages: [], errorFileUploadMessages: []});
+
             if (result[0] === "Successfully Uploaded") this.setState({successFileUploadMessages: result});
             else this.setState({errorFileUploadMessages: result});
         });
