@@ -18,7 +18,9 @@ class SubmitTransactionsFiles extends Component {
             totalField: "",
             type: "buy",
             dateField: "",
-            progressCounter: 0
+            progressCounter: 0,
+            successFileUploadMessages: [],
+            errorFileUploadMessages: []
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -51,7 +53,7 @@ class SubmitTransactionsFiles extends Component {
 
         let data = this.state.file;
 
-        formData.append('file', data);
+        formData.append('transactionsFile', data);
 
         var fileCharacterEstimatedTimeToUpload = this.state.fileCharacterEstimatedTimeToUpload;
 
@@ -71,8 +73,11 @@ class SubmitTransactionsFiles extends Component {
             this.setState({progressCounter: 100});
         }, fileCharacterEstimatedTimeToUpload * 1);
 
-        accessApiWrapper.postFormData("/TransactionFile", formData).then(() => {
-            this.setState({progressCounter: 100})
+        accessApiWrapper.postFormData("/TransactionsFile", formData).then((result) => {
+            this.setState({progressCounter: 100});
+
+            if (result[0] === "Successfully Uploaded") this.setState({successFileUploadMessages: result});
+            else this.setState({errorFileUploadMessages: result});
         });
     }
 
@@ -85,7 +90,9 @@ class SubmitTransactionsFiles extends Component {
 
                 <CardBody className="mb-0">
                     <CustomFileUpload setFile={this.setFile} buttonClick={this.handleFormSubmit}
-                                      progressCounter={this.state.progressCounter}/>
+                                      progressCounter={this.state.progressCounter}
+                                      successMessages={this.state.successFileUploadMessages}
+                                      errorMessages={this.state.errorFileUploadMessages}/>
                 </CardBody>
             </Card>
         );
