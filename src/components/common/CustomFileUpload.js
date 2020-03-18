@@ -11,7 +11,7 @@ const CustomFileUpload = ({setFile, buttonClick, progressCounter, successMessage
                                        messageTypePrefix={"Error"}/>
         </div>
         <div className="custom-file mb-3">
-            <input type="file" className="custom-file-input" id="customFile2" onChange={setFile}/>
+            <input type="file" className="custom-file-input" id="customFile2" accept={".csv"} onChange={setFile}/>
             <label className="custom-file-label" htmlFor="customFile2">
                 Choose file...
             </label>
