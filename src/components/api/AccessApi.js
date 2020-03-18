@@ -24,17 +24,7 @@ class AccessApi extends React.Component {
 
         const options = {headers: headers};
 
-        return new Promise(function (resolve) {
-                fetch(url, options)
-                    .then(res => res.json())
-                    .then((result) => {
-                            return resolve(result)
-                        },
-                        (error) => {
-                            return resolve(error)
-                        });
-            }
-        )
+        return this.fetch(url, options)
     }
 
     postData(urlExtension, data) {
@@ -52,17 +42,7 @@ class AccessApi extends React.Component {
 
         const options = {method: httpMethod, headers: headers, body: body};
 
-        return new Promise(function (resolve) {
-                fetch(url, options)
-                    .then(res => res.json())
-                    .then((result) => {
-                            return resolve(result)
-                        },
-                        (error) => {
-                            return resolve(error)
-                        });
-            }
-        )
+        return this.fetch(url, options)
     }
 
     postFormData(urlExtension, data) {
@@ -76,17 +56,7 @@ class AccessApi extends React.Component {
 
         const options = {method: httpMethod, headers: headers, body: body};
 
-        return new Promise(function (resolve) {
-                fetch(url, options)
-                    .then(res => res.json())
-                    .then((result) => {
-                            return resolve(result)
-                        },
-                        (error) => {
-                            return resolve(error)
-                        });
-            }
-        )
+        return this.fetch(url, options)
     }
 
     deleteData(urlExtension, uid) {
@@ -106,6 +76,20 @@ class AccessApi extends React.Component {
                         },
                         (error) => {
                             return resolve("Failed to delete: " + uid + " error: " + error)
+                        });
+            }
+        )
+    }
+
+    fetch(url, options) {
+        return new Promise(function (resolve) {
+                fetch(url, options)
+                    .then(res => res.json())
+                    .then((result) => {
+                            return resolve(result)
+                        },
+                        (error) => {
+                            return resolve(error)
                         });
             }
         )
