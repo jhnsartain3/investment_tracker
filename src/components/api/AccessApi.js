@@ -38,15 +38,21 @@ class AccessApi extends React.Component {
     postData(urlExtension, data) {
         const url = this.state.url + urlExtension;
 
+        const httpMethod = 'POST';
+
+        const headers = {
+            'Authorization': 'Bearer ' + authenticationService.getToken(),
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        };
+
+        const body = JSON.stringify(data);
+
         return new Promise(function (resolve) {
                 fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': 'Bearer ' + authenticationService.getToken(),
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
+                    method: httpMethod,
+                    headers: headers,
+                    body: body
                 })
                     .then(res => res.json())
                     .then((result) => {
@@ -62,13 +68,17 @@ class AccessApi extends React.Component {
     postFormData(urlExtension, data) {
         const url = this.state.url + urlExtension;
 
+        const httpMethod = 'POST';
+
+        const headers = {'Authorization': 'Bearer ' + authenticationService.getToken()};
+
+        const body = data;
+
         return new Promise(function (resolve) {
                 fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': 'Bearer ' + authenticationService.getToken(),
-                    },
-                    body: data
+                    method: httpMethod,
+                    headers: headers,
+                    body: body
                 })
                     .then(res => res.json())
                     .then((result) => {
