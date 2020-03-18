@@ -22,8 +22,10 @@ class AccessApi extends React.Component {
 
         const headers = {'Authorization': 'Bearer ' + authenticationService.getToken()};
 
+        const options = {headers: headers};
+
         return new Promise(function (resolve) {
-                fetch(url, {headers})
+                fetch(url, options)
                     .then(res => res.json())
                     .then((result) => {
                             return resolve(result)
@@ -48,12 +50,10 @@ class AccessApi extends React.Component {
 
         const body = JSON.stringify(data);
 
+        const options = {method: httpMethod, headers: headers, body: body};
+
         return new Promise(function (resolve) {
-                fetch(url, {
-                    method: httpMethod,
-                    headers: headers,
-                    body: body
-                })
+                fetch(url, options)
                     .then(res => res.json())
                     .then((result) => {
                             return resolve(result)
@@ -74,12 +74,10 @@ class AccessApi extends React.Component {
 
         const body = data;
 
+        const options = {method: httpMethod, headers: headers, body: body};
+
         return new Promise(function (resolve) {
-                fetch(url, {
-                    method: httpMethod,
-                    headers: headers,
-                    body: body
-                })
+                fetch(url, options)
                     .then(res => res.json())
                     .then((result) => {
                             return resolve(result)
