@@ -3,6 +3,8 @@ import AuthenticationService from "../../authentication/services/AuthenticationS
 
 var authenticationService = new AuthenticationService();
 
+let baseUrl;
+
 class AccessApi extends React.Component {
     constructor(props) {
         super(props);
@@ -10,25 +12,23 @@ class AccessApi extends React.Component {
         let baseUrlTest = "https://sartain-studios-api.com:2083"; //"https://localhost:44344";
         let baseUrlProd = "https://sartain-studios-api.com:2053";
 
-        this.state = {
-            url: window.location.href.includes("localhost") ?
-                baseUrlTest :
-                baseUrlProd
-        };
+        baseUrl = window.location.href.includes("localhost") ?
+            baseUrlTest :
+            baseUrlProd
     }
 
     getData(urlExtension) {
-        const url = this.state.url + urlExtension;
+        const completeUrl = baseUrl + urlExtension;
 
         const headers = {'Authorization': 'Bearer ' + authenticationService.getToken()};
 
         const options = {headers: headers};
 
-        return this.fetch(url, options)
+        return this.fetch(completeUrl, options)
     }
 
     postData(urlExtension, data) {
-        const url = this.state.url + urlExtension;
+        const completeUrl = baseUrl + urlExtension;
 
         const httpMethod = 'POST';
 
@@ -42,11 +42,11 @@ class AccessApi extends React.Component {
 
         const options = {method: httpMethod, headers: headers, body: body};
 
-        return this.fetch(url, options)
+        return this.fetch(completeUrl, options)
     }
 
     postFormData(urlExtension, data) {
-        const url = this.state.url + urlExtension;
+        const completeUrl = baseUrl + urlExtension;
 
         const httpMethod = 'POST';
 
@@ -56,7 +56,7 @@ class AccessApi extends React.Component {
 
         const options = {method: httpMethod, headers: headers, body: body};
 
-        return this.fetch(url, options)
+        return this.fetch(completeUrl, options)
     }
 
     deleteData(urlExtension, uid) {
@@ -81,9 +81,9 @@ class AccessApi extends React.Component {
         )
     }
 
-    fetch(url, options) {
+    fetch(completeUrl, options) {
         return new Promise(function (resolve) {
-                fetch(url, options)
+                fetch(completeUrl, options)
                     .then(res => res.json())
                     .then((result) => {
                             return resolve(result)
