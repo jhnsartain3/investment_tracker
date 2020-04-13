@@ -10,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 function Copyright() {
@@ -51,10 +51,10 @@ export default function LoginForm(props) {
 
     return (
         <Container component="main" maxWidth="xs">
-            <CssBaseline />
+            <CssBaseline/>
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}>
-                    <LockOutlinedIcon />
+                    <LockOutlinedIcon/>
                 </Avatar>
                 <Typography component="h1" variant="h5">
                     Sign in
@@ -89,7 +89,7 @@ export default function LoginForm(props) {
                         autoComplete="current-password"
                     />
                     <FormControlLabel
-                        control={<Checkbox value="remember" color="primary" />}
+                        control={<Checkbox value="remember" color="primary"/>}
                         label="Remember me"
                     />
                     <Button
@@ -117,7 +117,7 @@ export default function LoginForm(props) {
                 </div>
             </div>
             <Box mt={8}>
-                <Copyright />
+                <Copyright/>
             </Box>
         </Container>
     );

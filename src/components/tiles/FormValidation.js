@@ -1,16 +1,5 @@
 import React from "react";
-import {
-    Button,
-    Card,
-    CardBody,
-    Col,
-    Form,
-    FormFeedback,
-    FormGroup,
-    FormInput,
-    FormSelect,
-    Row
-} from "shards-react";
+import {Button, Card, CardBody, Col, Form, FormFeedback, FormGroup, FormInput, FormSelect, Row} from "shards-react";
 
 const FormValidation = () => (
     <Card small className="h-100">

@@ -53,9 +53,9 @@ class TransactionsByTicker extends React.Component {
             return transaction.transactionModels.map((data) => {
                 return data
             })
-        })
+        });
 
-        return stuff.map((ex)=>{
+        return stuff.map((ex) => {
             return <AllTransactionsTable transactions={ex}
                                          headers={["Date", "Type", "Ticker", "X", "Price", "Total"]}
                                          title={ex[0].ticker.toUpperCase()}/>

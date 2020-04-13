@@ -7,7 +7,7 @@ class CompanySummaryTile extends Component {
     }
 
     render() {
-        console.log(this.props.summaryOfTransactions)
+        console.log(this.props.summaryOfTransactions);
 
         return (
             <Card>

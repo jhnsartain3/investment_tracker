@@ -74,12 +74,13 @@ class AllTransactionsScreen extends React.Component {
                     {/* List */}
                     <Row>
                         <Col lg="8" md="12" sm="12" className="mb-4">
-                            <AllTransactionsTable transactions={this.state.transactions} headers={["Date", "Type", "Ticker", "X", "Price", "Total"]}
+                            <AllTransactionsTable transactions={this.state.transactions}
+                                                  headers={["Date", "Type", "Ticker", "X", "Price", "Total"]}
                                                   title={"All Transactions"}/>
                         </Col>
 
                         <Col lg="4" md="6" sm="12" className="mb-4">
-                            <SubmitTransactionsFiles />
+                            <SubmitTransactionsFiles/>
                             <BuySellDividendRatioGraph chartData={this.state.chartData}/>
                         </Col>
                     </Row>

@@ -1,4 +1,4 @@
-import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle, FormInput, InputGroup, Row} from "shards-react";
+import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle, FormInput, InputGroup} from "shards-react";
 import React from "react";
 
 export default class StockPickerDropdown extends React.Component {

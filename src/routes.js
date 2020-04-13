@@ -6,7 +6,6 @@ import {DefaultLayout} from "./components/layout/default layout";
 import DashboardOverviewScreen from "./pages/DashboardOverviewScreen";
 import AllTransactionsScreen from "./pages/AllTransactionsScreen";
 import StockOverviewScreen from "./pages/StockOverviewScreen";
-import RegistrationScreen from "./pages/RegistrationScreen";
 import withAuthentication from "./authentication/higherOrderComponents/withAuthentication";
 import Empty from "./components/layout/default layout/Empty";
 import SignInScreen from "./pages/SignInScreen";

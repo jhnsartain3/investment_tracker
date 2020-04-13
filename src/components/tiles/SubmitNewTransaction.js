@@ -108,7 +108,8 @@ class SubmitNewTransaction extends Component {
                         <div>
                             <label>Date</label>
                             <InputGroup className="mb-3">
-                                <FormInput placeholder="11/12/2020" type="date" name="dateField" onChange={this.handleChange}/>
+                                <FormInput placeholder="11/12/2020" type="date" name="dateField"
+                                           onChange={this.handleChange}/>
                             </InputGroup>
 
                             <label>Quantity</label>
