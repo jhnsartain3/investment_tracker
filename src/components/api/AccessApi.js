@@ -9,10 +9,10 @@ class AccessApi extends React.Component {
     constructor(props) {
         super(props);
 
-        let baseUrlTest = "https://sartain-studios-api.com:2083"; //"https://localhost:44344";
-        let baseUrlProd = "https://sartain-studios-api.com:2053";
+        let baseUrlTest = "https://investmenttrackerapitest.sartainstudios.com"; //"https://localhost:44344";
+        let baseUrlProd = "https://investmenttrackerapi.sartainstudios.com";
 
-        baseUrl = window.location.href.includes("localhost") ?
+        baseUrl = window.location.href.includes("localhost") || window.location.href.includes("test.sartainstudios.com") ?
             baseUrlTest :
             baseUrlProd
     }
